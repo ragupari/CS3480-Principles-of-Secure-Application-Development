@@ -1,3 +1,7 @@
+// lab1/lab1p1.c
+// Name: Parishith Ragumar
+// Student ID: 220444K
+
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -44,11 +48,9 @@ int main(int argc, char *argv[]) {
       }
     }
   }
-  
   // For any remaining arguments after the last '+'
   if (s_index > 0) {
     execute(strings, s_index);
   }
-
   return 0;
 }

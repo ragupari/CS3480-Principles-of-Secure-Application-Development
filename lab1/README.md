@@ -1,8 +1,26 @@
-# lab1p1 - Process Execution with execve()
+# lab1p1 - Part 1
 
-## Description
+## How to build the code (using gcc):
 
-`lab1p1.c` is a C program that mimics simple shell-like behavior by parsing and executing a sequence of commands separated by the '+' symbol. It creates a new child process for each command using `fork()`, and replaces the child with the desired program using `execve()`. Empty commands are handled using `/bin/true`.
+Compile the code using gcc:
+
+```bash
+gcc lab1p1.c -o lab1p1
+```
+## How to build the code (using shell script):
+`build.sh` shell script will do the compiling of `lab1p1.c`
+
+To give relevant executable permissions to shell scripts when running:
+```
+chmod +x build.sh
+```
+
+Now `lab1p1.c` can be built using `build.sh`
+```
+./build.sh lab1p1
+```
+
+Now the binary `lab1p1` is created.
 
 ## Example Usage
 
@@ -18,34 +36,48 @@ This will result in the following commands being executed:
 * /bin/sleep 5
 * /bin/echo Now I am awake
 
-## Features
+# lab1p2 - Part 2
 
-* Uses `execve()` only (no `system()` or `execvp()`)
-* Handles multiple commands separated by `+`
-* Supports up to 8 arguments per command
-* Uses `/bin/true` for empty commands
-
-## Compilation
+## How to build the code (using gcc):
 
 Compile the code using gcc:
 
 ```bash
-gcc lab1p1.c -o lab1p1
+gcc lab1p1.c -o lab1p2
+```
+## How to build the code (using shell script):
+`build.sh` shell script will do the compiling of `lab1p2.c`
+
+To give relevant executable permissions to shell scripts when running:
+```
+chmod +x build.sh
 ```
 
-## Notes
+Now `lab1p2.c` can be built using `build.sh`
+```
+./build.sh lab1p2
+```
 
-* Ensure all executable paths used exist on your system (e.g., `/bin/echo`, `/bin/sleep`)
-* Add execute permissions to any shell scripts used for testing:
+Now the binary `lab1p1` is created.
+
+First enter the command to be executed repetitively with no of `%` (Not exceeding 8 times).
+No of `%` will be the maximum no of inputs that can be entered repetitively. (Can enter any number of input lines)
+Once finish, exit with EOF `Ctrl+D` (Keyboard input).
+
+## Example Usage
 
 ```bash
-chmod +x test.sh
+./lab1p2 ./lab1p2 gcc % % % % % %
+-c a.c
+-c b.c
+-c c.c
+-o a.o b.o c.o
 ```
 
-## Author
 
-Your Name Here
+This will result in the following commands being executed:
 
-## License
-
-This project is provided for educational purposes.
+* gcc -c a.c
+* gcc -c b.c
+* gcc -c c.c
+* gcc -0 a.0 b.0 c.0
