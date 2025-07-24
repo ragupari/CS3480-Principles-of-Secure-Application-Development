@@ -1,13 +1,24 @@
 #!/bin/bash
 
-echo "🗑️  Removing old binary..."
-rm -f lab1p1
+# Check if argument is given
+if [ -z "$1" ]; then
+    echo "❌ Error: No filename provided."
+    echo "Usage: $0 <filename_without_.c>"
+    exit 1
+fi
 
-echo "🛠️  Compiling..."
-gcc lab1p1.c -o lab1p1
+filename="$1"
+src="${filename}.c"
+out="${filename}"
+
+echo "🗑️  Removing old binary..."
+rm -f "$out"
+
+echo "🛠️  Compiling $src..."
+gcc "$src" -o "$out"
 
 if [ $? -eq 0 ]; then
-    echo "✅ Compilation successful: ./lab1p1"
+    echo "✅ Compilation successful: ./$out"
 else
     echo "❌ Compilation failed."
 fi

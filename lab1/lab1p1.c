@@ -44,11 +44,9 @@ int main(int argc, char *argv[]) {
       }
     }
   }
-  
   // For any remaining arguments after the last '+'
   if (s_index > 0) {
     execute(strings, s_index);
   }
-
   return 0;
 }
