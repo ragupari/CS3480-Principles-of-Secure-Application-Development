@@ -1,3 +1,7 @@
+// lab1/lab1p2.c
+// Name: Parishith Ragumar
+// Student ID: 220444K
+
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
