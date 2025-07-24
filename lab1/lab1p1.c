@@ -25,10 +25,9 @@ int execute(char strings[8][100], int s_index) {
 }
 
 int main(int argc, char *argv[]) {
-  printf("You passed %d arguments:\n", argc - 1);
   char strings[8][100] = {0};
   int s_index = 0;
-
+  // Loop through command line arguments and add them to the strings array before + sign
   for (int i = 1; i < argc; i++) {
     if (strcmp(argv[i], "+") == 0) {
       if (s_index == 0) {
@@ -45,7 +44,8 @@ int main(int argc, char *argv[]) {
       }
     }
   }
-
+  
+  // For any remaining arguments after the last '+'
   if (s_index > 0) {
     execute(strings, s_index);
   }
