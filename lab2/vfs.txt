@@ -1,0 +1,5 @@
+DIR /home root root 755
+DIR /home/Alice Alice Alice 700
+DIR /home/Alice/Documents Alice Alice 755
+FILE /home/Alice/Documents/file.txt Alice Alice 644 
+DIR /home/Bob Bob Bob 700
